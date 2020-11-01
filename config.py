@@ -1,18 +1,18 @@
 from models.Todo import Todo
 from models.Category import Category
 from models.Dish import Dish
-from models.Ingridients import Ingridients
+from models.Ingredients import Ingredients
 
 from utils.get_database_path import get_database_path
 
-DATABASE = 'my_db.db'
+DATABASE = 'my.db'
 APP_NAME = 'todoapp'
 
 MODELS = (
     Todo,
     Category,
     Dish,
-    Ingridients
+    Ingredients
 )
 
 # DATABASE_PATH = get_database_path(appname=APP_NAME, database=DATABASE)

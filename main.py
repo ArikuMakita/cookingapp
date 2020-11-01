@@ -4,17 +4,7 @@ from api import api
 
 init_database()
 
-
-
-# ! Проверять сервисы так:
-from services.TodoService import get_all_todo
-todos = get_all_todo()
-serialized_todos = []
-for todo in todos:
-    serialized_todos.append(todo.serialize())
-
 exit()
-
 eel.init('web')
 
 page = 'main.html'

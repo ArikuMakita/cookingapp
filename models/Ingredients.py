@@ -6,7 +6,7 @@ from peewee import (
 from core.BaseModel import BaseModel
 
 
-class Ingridients(BaseModel):
+class Ingredients(BaseModel):
     """
     Модель состава.
     Поля: id, amount,

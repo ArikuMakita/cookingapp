@@ -6,7 +6,7 @@ from peewee import (
 )
 from core.BaseModel import BaseModel
 from .Category import Category
-from .Ingridients import Ingridients
+from .Ingredients import Ingredients
 
 
 class Dish(BaseModel):
@@ -15,7 +15,7 @@ class Dish(BaseModel):
     time = IntegerField()
     calories = IntegerField()
     category = ForeignKeyField(Category)
-    ingridients = ForeignKeyField(Ingridients)
+    ingredients = ForeignKeyField(Ingredients)
 
     def serialize(self):
         return {
@@ -25,5 +25,5 @@ class Dish(BaseModel):
             'time': self.time,
             'calories': self.calories,
             'category': self.category.serialize(),
-            'ingridients': self.ingridients.serialize()
+            'ingredients': self.ingredients.serialize()
         }
