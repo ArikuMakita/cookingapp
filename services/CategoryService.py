@@ -4,6 +4,7 @@ from utils.transform_query_to_array import transform_query_to_array
 
 
 def create_category(data):
+    #  TODO: Проверка на уникальность!!!
     """
     data = {
         title
@@ -24,6 +25,5 @@ def delete_category_by_id(id):
 
 
 def get_all_category():
-    # Верни список категорий
     query_category = Category.select()
     return transform_query_to_array(query_category)

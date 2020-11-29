@@ -1,23 +1,214 @@
-import eel
 from core.init_database import init_database
-from api import api
+import regex
+from pprint import pprint
+from PyInquirer import prompt
+from PyInquirer import Validator, ValidationError
+from config import CUSTOM_TERMINAL_STYLES
+from services.DishService import (
+    get_all_dish,
+    create_dish,
+    get_dish_by_category_id,
+    get_dish_by_id
+)
+from services.CategoryService import get_all_category, create_category
 
-init_database()
+class NumberValidator(Validator):
+    def validate(self, document):
+        try:
+            int(document.text)
+        except ValueError:
+            raise ValidationError(
+                message='Пожалуйста введите целое число',
+                cursor_position=len(document.text))  # Move cursor to end
 
-exit()
-eel.init('web')
+def back():
+    return
 
-page = 'main.html'
-size = (700, 700)
+def create_menu__create_dish_menu():
+    categories = get_all_category()
+    categories_choices = []
+    categories_title_to_id = {}
+ 
+    for category in categories:
+        categories_choices.append(category.title)
+        categories_title_to_id[category.title] = category.id
 
-try:
-    eel.start(page, size=size)
-except:
-    # If Chrome isn't found, fallback to Microsoft Edge on Win10 or greater
-    import sys
-    import platform
+   
+    create_dish_menu_questions = [
+        {
+            'type': 'input',
+            'name': 'title',
+            'message': 'Название блюда: ',
+        },
+        {
+            'type': 'input',
+            'name': 'recipe',
+            'message': 'Рецепт: ',
+        },
+        {
+            'type': 'input',
+            'name': 'time',
+            'message': 'Время готовки блюда (в минутах): ',
+            'validate': NumberValidator,
+            'filter': lambda val: int(val)
+        },
+        {
+            'type': 'input',
+            'name': 'calories',
+            'message': 'Калорийность порции блюда: ',
+            'validate': NumberValidator,
+            'filter': lambda val: int(val)
+        },
+        {
+            'type': 'list',
+            'name': 'category',
+            'message': 'Выберите категорию: ',
+            'choices': categories_choices,
+        },
+        {
+            'type': 'input',
+            'name': 'amount',
+            'message': 'Количество порций блюда: ',
+            'validate': NumberValidator,
+            'filter': lambda val: int(val)
+        },
+        {
+            'type': 'input',
+            'name': 'components',
+            'message': 'Компоненты блюда (через запятую): ',
+        },
+    ]
 
-    if sys.platform in ['win32', 'win64'] and int(platform.release()) >= 10:
-        eel.start(page, mode='edge', size=size)
-    else:
-        raise
+    answer = prompt(create_dish_menu_questions, style=CUSTOM_TERMINAL_STYLES)
+
+    selected_category = answer['category']
+    selected_category_id = categories_title_to_id[selected_category]
+
+    data = {
+        "title": answer['title'],
+        "recipe": answer['recipe'],
+        "time": answer['time'],
+        "calories": answer['calories'],
+        "category": selected_category_id,
+        "ingredients": {
+            "amount": answer['amount'],
+            "components": answer['components']
+        }
+    }
+    
+    create_dish(data)
+    
+
+def create_menu__create_category_menu():
+    category_questions = [{
+            'type': 'input',
+            'name': 'title',
+            'message': 'Название категории: '
+    }]
+
+    answer = prompt(category_questions, style=CUSTOM_TERMINAL_STYLES)
+
+    create_category(answer)
+    
+
+def main_menu__find():
+    print('Меню поиска')
+
+def main_menu__view():
+    categories = get_all_category()
+    if not len(categories):
+        print('Создайте категорию')
+        return
+
+    categories_choices = []
+    categories_title_to_id = {}
+ 
+    for category in categories:
+        categories_choices.append(category.title)
+        categories_title_to_id[category.title] = category.id
+
+    view_categories_questions = [{
+            'type': 'list',
+            'name': 'category',
+            'message': 'Выберите категорию: ',
+            'choices': categories_choices,
+    }]
+    answer = prompt(view_categories_questions, style=CUSTOM_TERMINAL_STYLES)
+    selected_category = answer['category']
+    selected_category_id = categories_title_to_id[selected_category]
+
+    dishes = get_dish_by_category_id(selected_category_id)
+
+    if not len(dishes):
+        print('Создайте блюда')
+        return
+    
+    dishes_choices = []
+    dishes_title_to_id = {}
+ 
+    for dish in dishes:
+        dishes_choices.append(dish.title)
+        dishes_title_to_id[dish.title] = dish.id
+
+    view_dish_questions = [{
+            'type': 'list',
+            'name': 'dish',
+            'message': 'Выберите блюдо: ',
+            'choices': dishes_choices,
+    }]
+    answer = prompt(view_dish_questions, style=CUSTOM_TERMINAL_STYLES)
+    selected_dish = answer['dish']
+    selected_dish_id = dishes_title_to_id[selected_dish]
+
+    dish = get_dish_by_id(selected_dish_id)
+    pprint(dish.serialize())
+
+def main_menu__quit_from_app():
+    print('Чао бИбА')
+    exit()
+
+def main_menu__create():
+    create_menu_answers = {
+        'Назад': back,
+        'Новое блюдо': create_menu__create_dish_menu,
+        'Новая категория': create_menu__create_category_menu,
+    }
+    create_menu_questions = [{
+        'type': 'list',
+        'name': 'create_menu',
+        'message': 'Создать:',
+        'choices': ['Назад', 'Новая категория'],
+    }]
+    categories = get_all_category()
+    if len(categories):
+        create_menu_questions[0]['choices'].append('Новое блюдо')
+
+    answer = prompt(create_menu_questions, style=CUSTOM_TERMINAL_STYLES)   
+
+    create_menu_answers[answer['create_menu']]()
+
+main_menu_answers = {
+    'Найти': main_menu__find,
+    'Создать': main_menu__create,
+    'Просмотреть': main_menu__view,
+    'Выйти': main_menu__quit_from_app,
+}
+main_menu_questions = [{
+    'type': 'list',
+    'name': 'main_menu',
+    'message': 'Добро пожаловать в приложение!',
+    'choices': ['Найти', 'Создать', 'Просмотреть', 'Выйти'],
+}]
+
+
+def init_client_actions():
+    work = True
+    while work:
+        answer = prompt(main_menu_questions, style=CUSTOM_TERMINAL_STYLES)
+        main_menu_answers[answer['main_menu']]()
+
+def main():
+    init_database()
+    init_client_actions()
+
+main()
