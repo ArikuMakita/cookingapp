@@ -11,6 +11,9 @@ from services.DishService import (
     get_dish_by_id
 )
 from services.CategoryService import get_all_category, create_category
+# TODO: отчистка консоли
+# TODO: предложение о создании категории или блюда если их нет в просмотре 
+
 
 class NumberValidator(Validator):
     def validate(self, document):
@@ -41,6 +44,24 @@ def create_menu__create_dish_menu():
             'message': 'Название блюда: ',
         },
         {
+            'type': 'list',
+            'name': 'category',
+            'message': 'Выберите категорию: ',
+            'choices': categories_choices,
+        },
+        {
+            'type': 'input',
+            'name': 'components',
+            'message': 'Компоненты блюда (через запятую): ',
+        },
+        {
+            'type': 'input',
+            'name': 'amount',
+            'message': 'Количество порций блюда: ',
+            'validate': NumberValidator,
+            'filter': lambda val: int(val)
+        },
+        {
             'type': 'input',
             'name': 'recipe',
             'message': 'Рецепт: ',
@@ -58,24 +79,6 @@ def create_menu__create_dish_menu():
             'message': 'Калорийность порции блюда: ',
             'validate': NumberValidator,
             'filter': lambda val: int(val)
-        },
-        {
-            'type': 'list',
-            'name': 'category',
-            'message': 'Выберите категорию: ',
-            'choices': categories_choices,
-        },
-        {
-            'type': 'input',
-            'name': 'amount',
-            'message': 'Количество порций блюда: ',
-            'validate': NumberValidator,
-            'filter': lambda val: int(val)
-        },
-        {
-            'type': 'input',
-            'name': 'components',
-            'message': 'Компоненты блюда (через запятую): ',
         },
     ]
 
