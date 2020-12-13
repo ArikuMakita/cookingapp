@@ -2,8 +2,7 @@ from core.init_database import init_database
 import regex
 from pprint import pprint
 from PyInquirer import prompt
-from PyInquirer import Validator, ValidationError
-from config import CUSTOM_TERMINAL_STYLES
+
 from services.DishService import (
     get_all_dish,
     create_dish,
@@ -12,29 +11,12 @@ from services.DishService import (
 )
 from services.CategoryService import get_all_category, create_category
 import os
+from validators import NumberValidator, RequiredValidator
+from menus.return_menu.return_menu import return_menu
 
 
 def clear_terminal():
     os.system('cls' if os.name == 'nt' else 'clear')
-
-print('ref')
-
-class NumberValidator(Validator):
-    def validate(self, document):
-        try:
-            int(document.text)
-        except ValueError:
-            raise ValidationError(
-                message='Пожалуйста введите целое число',
-                cursor_position=len(document.text))
-
-
-class RequiredValidator(Validator):
-    def validate(self, document):
-        if not len(document.text):
-            raise ValidationError(
-                message='Пожалуйста введите название',
-                cursor_position=len(document.text))
 
 
 def get_elem_choices_and_title_to_id(arr):
@@ -48,18 +30,6 @@ def get_elem_choices_and_title_to_id(arr):
 
 def back():
     return
-
-
-def return_menu(msg):
-    return_questions = [{'type': 'list', 'name': 'return_menu', 'message': '', 'choices': [
-        'Назад']}]
-
-    return_aswers = {
-        'Назад': back
-    }
-    print(msg)
-    answer = prompt(return_questions, style=CUSTOM_TERMINAL_STYLES)
-    return return_aswers[answer['return_menu']]()
 
 
 def create_dish_menu():
@@ -113,7 +83,7 @@ def create_dish_menu():
     ]
 
     clear_terminal()
-    answer = prompt(create_dish_questions, style=CUSTOM_TERMINAL_STYLES)
+    answer = prompt(create_dish_questions)
 
     selected_category = answer['category']
     selected_category_id = category_title_to_id[selected_category]
@@ -141,7 +111,7 @@ def create_category_menu():
         'validate': RequiredValidator
     }]
     clear_terminal()
-    answer = prompt(create_category_questions, style=CUSTOM_TERMINAL_STYLES)
+    answer = prompt(create_category_questions)
     create_category(answer)
 
 
@@ -164,7 +134,7 @@ def view_category_menu():
         'message': 'Выберите категорию: ',
         'choices': category_choices,
     }]
-    answer = prompt(view_category_questions, style=CUSTOM_TERMINAL_STYLES)
+    answer = prompt(view_category_questions)
     selected_category = answer['category']
     selected_category_id = category_title_to_id[selected_category]
 
@@ -181,14 +151,14 @@ def view_category_menu():
         'message': 'Выберите блюдо: ',
         'choices': view_dish_choices,
     }]
-    answer = prompt(view_dish_questions, style=CUSTOM_TERMINAL_STYLES)
+    answer = prompt(view_dish_questions)
     selected_dish = answer['dish']
     selected_dish_id = dish_title_to_id[selected_dish]
 
     dish = get_dish_by_id(selected_dish_id)
     pprint(dish.serialize())
     answer = prompt([{'type': 'list', 'name': 'view', 'message': '', 'choices': [
-                    'Назад']}], style=CUSTOM_TERMINAL_STYLES)
+                    'Назад']}])
     back()
 
 
@@ -213,7 +183,7 @@ def create_menu():
     if len(categories):
         create_menu_questions[0]['choices'].append('Новое блюдо')
 
-    answer = prompt(create_menu_questions, style=CUSTOM_TERMINAL_STYLES)
+    answer = prompt(create_menu_questions)
 
     create_menu_answers[answer['create_menu']]()
 
@@ -231,7 +201,7 @@ def main_menu():
         'message': 'Добро пожаловать в приложение!',
         'choices': ['Найти', 'Создать', 'Просмотреть', 'Выйти'],
     }]
-    answer = prompt(main_menu_questions, style=CUSTOM_TERMINAL_STYLES)
+    answer = prompt(main_menu_questions)
     clear_terminal()
     main_menu_answers[answer['main_menu']]()
     clear_terminal()

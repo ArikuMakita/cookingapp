@@ -10,7 +10,6 @@ from prompt_toolkit.styles import style_from_dict
 from prompt_toolkit.token import Token
 from prompt_toolkit.mouse_events import MouseEventTypes
 
-
 PY3 = sys.version_info[0] >= 3
 
 if PY3:
@@ -38,7 +37,7 @@ def setup_validator(kwargs):
         elif callable(validate_prompt):
             class _InputValidator(Validator):
                 def validate(self, document):
-                    #print('validation!!')
+                    # print('validation!!')
                     verdict = validate_prompt(document.text)
                     if isinstance(verdict, basestring):
                         raise ValidationError(
@@ -65,28 +64,26 @@ def setup_simple_validator(kwargs):
             return True
         return _always
     elif not callable(validate):
-        raise ValueError('Here a simple validate function is expected, no class')
+        raise ValueError(
+            'Here a simple validate function is expected, no class')
 
     def _validator(answer):
         verdict = validate(answer)
         if isinstance(verdict, basestring):
             raise ValidationError(
                 message=verdict
-                )
+            )
         elif verdict is not True:
             raise ValidationError(
                 message='invalid input'
-                )
+            )
     return _validator
 
 
-# FIXME style defaults on detail level
 default_style = style_from_dict({
-    Token.Separator: '#6C6C6C',
-    Token.QuestionMark: '#5F819D',
-    Token.Selected: '',  # default
-    Token.Pointer: '#FF9D00 bold',  # AWS orange
+    Token.QuestionMark: '#E91E63 bold',
+    Token.Selected: '#673AB7 bold',
     Token.Instruction: '',  # default
-    Token.Answer: '#FF9D00 bold',  # AWS orange
-    Token.Question: 'bold',
+    Token.Answer: '#2196f3 bold',
+    Token.Question: '',
 })
