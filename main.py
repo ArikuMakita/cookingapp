@@ -15,18 +15,8 @@ from validators import NumberValidator, RequiredValidator
 from menus.return_menu.return_menu import return_menu
 from utils.clear_terminal import clear_terminal
 from menus.create_dish_menu.create_dish_menu import create_dish_menu
+from menus.create_category_menu.create_category_menu import create_category_menu
 
-
-def create_category_menu():
-    create_category_questions = [{
-        'type': 'input',
-        'name': 'title',
-        'message': 'Название категории: ',
-        'validate': RequiredValidator
-    }]
-    clear_terminal()
-    answer = prompt(create_category_questions)
-    create_category(answer)
 
 
 def find_menu():
