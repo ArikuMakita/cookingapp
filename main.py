@@ -18,7 +18,6 @@ from menus.create_dish_menu.create_dish_menu import create_dish_menu
 from menus.create_category_menu.create_category_menu import create_category_menu
 
 
-
 def find_menu():
     print('Меню поиска')
 
@@ -42,6 +41,7 @@ def view_category_menu():
     selected_category = answer['category']
     selected_category_id = category_title_to_id[selected_category]
 
+    # TODO: Вынести в отдельную функцию view_dish_menu
     dishes = get_dish_by_category_id(selected_category_id)
     if not len(dishes):
         return return_menu('Создайте блюда')
