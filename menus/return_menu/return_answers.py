@@ -1,7 +1,6 @@
-def back():
-    return
+from utils.back import back
 
 
-return_aswers = {
+RETURN_ANSWERS = {
     'Назад': back
 }
