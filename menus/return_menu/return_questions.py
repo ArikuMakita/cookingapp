@@ -1,2 +1,2 @@
-return_questions = [{'type': 'list', 'name': 'return_menu', 'message': '', 'choices': [
+RETURN_QUESTIONS = [{'type': 'list', 'name': 'return_menu', 'message': '', 'choices': [
     'Назад']}]

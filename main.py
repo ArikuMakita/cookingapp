@@ -2,7 +2,8 @@ from core.init_database import init_database
 import regex
 from pprint import pprint
 from PyInquirer import prompt
-
+from utils.get_elem_choices_and_title_to_id import get_elem_choices_and_title_to_id
+from utils.back import back
 from services.DishService import (
     get_all_dish,
     create_dish,
@@ -10,97 +11,10 @@ from services.DishService import (
     get_dish_by_id
 )
 from services.CategoryService import get_all_category, create_category
-import os
 from validators import NumberValidator, RequiredValidator
 from menus.return_menu.return_menu import return_menu
-
-
-def clear_terminal():
-    os.system('cls' if os.name == 'nt' else 'clear')
-
-
-def get_elem_choices_and_title_to_id(arr):
-    elem_choices = []
-    elem_title_to_id = {}
-    for elem in arr:
-        elem_choices.append(elem.title)
-        elem_title_to_id[elem.title] = elem.id
-    return elem_choices, elem_title_to_id
-
-
-def back():
-    return
-
-
-def create_dish_menu():
-    categories = get_all_category()
-    category_choices, category_title_to_id = get_elem_choices_and_title_to_id(
-        categories)
-
-    create_dish_questions = [
-        {
-            'type': 'input',
-            'name': 'title',
-            'message': 'Название блюда: ',
-        },
-        {
-            'type': 'list',
-            'name': 'category',
-            'message': 'Выберите категорию: ',
-            'choices': category_choices,
-        },
-        {
-            'type': 'input',
-            'name': 'components',
-            'message': 'Компоненты блюда (через запятую): ',
-        },
-        {
-            'type': 'input',
-            'name': 'amount',
-            'message': 'Количество порций блюда: ',
-            'validate': NumberValidator,
-            'filter': lambda val: int(val)
-        },
-        {
-            'type': 'input',
-            'name': 'recipe',
-            'message': 'Рецепт: ',
-        },
-        {
-            'type': 'input',
-            'name': 'time',
-            'message': 'Время готовки блюда (в минутах): ',
-            'validate': NumberValidator,
-            'filter': lambda val: int(val)
-        },
-        {
-            'type': 'input',
-            'name': 'calories',
-            'message': 'Калорийность порции блюда: ',
-            'validate': NumberValidator,
-            'filter': lambda val: int(val)
-        },
-    ]
-
-    clear_terminal()
-    answer = prompt(create_dish_questions)
-
-    selected_category = answer['category']
-    selected_category_id = category_title_to_id[selected_category]
-
-    data = {
-        "title": answer['title'],
-        "recipe": answer['recipe'],
-        "time": answer['time'],
-        "calories": answer['calories'],
-        "category": selected_category_id,
-        "ingredients": {
-            "amount": answer['amount'],
-            "components": answer['components']
-        }
-    }
-
-    create_dish(data)
+from utils.clear_terminal import clear_terminal
+from menus.create_dish_menu.create_dish_menu import create_dish_menu
 
 
 def create_category_menu():

@@ -3,5 +3,5 @@ class RequiredValidator(Validator):
     def validate(self, document):
         if not len(document.text):
             raise ValidationError(
-                message='Пожалуйста введите название',
+                message='Поле не может быть пустым',
                 cursor_position=len(document.text))

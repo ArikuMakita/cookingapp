@@ -1,8 +1,8 @@
-from .return_answers import *
-from .return_questions import *
+from .return_answers import RETURN_ANSWERS
+from .return_questions import RETURN_QUESTIONS
 from PyInquirer import prompt
 
 def return_menu(msg):
     print(msg)
-    answer = prompt(return_questions)
-    return return_aswers[answer['return_menu']]()
+    answer = prompt(RETURN_QUESTIONS)
+    return RETURN_ANSWERS[answer['return_menu']]()
