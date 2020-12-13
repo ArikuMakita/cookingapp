@@ -13,7 +13,10 @@ from services.DishService import (
 from services.CategoryService import get_all_category, create_category
 # TODO: отчистка консоли
 # TODO: предложение о создании категории или блюда если их нет в просмотре 
+import os
 
+def clear_terminal():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 class NumberValidator(Validator):
     def validate(self, document):
@@ -81,7 +84,7 @@ def create_menu__create_dish_menu():
             'filter': lambda val: int(val)
         },
     ]
-
+    clear_terminal()
     answer = prompt(create_dish_menu_questions, style=CUSTOM_TERMINAL_STYLES)
 
     selected_category = answer['category']
@@ -108,9 +111,8 @@ def create_menu__create_category_menu():
             'name': 'title',
             'message': 'Название категории: '
     }]
-
+    clear_terminal()
     answer = prompt(category_questions, style=CUSTOM_TERMINAL_STYLES)
-
     create_category(answer)
     
 
@@ -121,7 +123,8 @@ def main_menu__view():
     categories = get_all_category()
     if not len(categories):
         print('Создайте категорию')
-        return
+        answer = prompt([{'type':'list', 'name':'view','message':'','choices':['Назад']}], style=CUSTOM_TERMINAL_STYLES)
+        return back()
 
     categories_choices = []
     categories_title_to_id = {}
@@ -144,7 +147,8 @@ def main_menu__view():
 
     if not len(dishes):
         print('Создайте блюда')
-        return
+        answer = prompt([{'type':'list', 'name':'view','message':'','choices':['Назад']}], style=CUSTOM_TERMINAL_STYLES)
+        return back()
     
     dishes_choices = []
     dishes_title_to_id = {}
@@ -165,6 +169,9 @@ def main_menu__view():
 
     dish = get_dish_by_id(selected_dish_id)
     pprint(dish.serialize())
+    answer = prompt([{'type':'list', 'name':'view','message':'','choices':['Назад']}], style=CUSTOM_TERMINAL_STYLES)
+    back()
+
 
 def main_menu__quit_from_app():
     print('Чао бИбА')
@@ -205,10 +212,13 @@ main_menu_questions = [{
 
 
 def init_client_actions():
+    clear_terminal()
     work = True
     while work:
         answer = prompt(main_menu_questions, style=CUSTOM_TERMINAL_STYLES)
+        clear_terminal()
         main_menu_answers[answer['main_menu']]()
+        clear_terminal()
 
 def main():
     init_database()

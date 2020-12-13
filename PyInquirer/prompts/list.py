@@ -22,6 +22,7 @@ from .. import PromptParameterException
 from ..separator import Separator
 from .common import if_mousedown, default_style
 
+
 # custom control based on TokenListControl
 # docu here:
 # https://github.com/jonathanslenders/python-prompt-toolkit/issues/281
@@ -73,13 +74,13 @@ class InquirerControl(TokenListControl):
 
         def append(index, choice):
             selected = (index == self.selected_option_index)
-
             @if_mousedown
             def select_item(cli, mouse_event):
                 # bind option with this index to mouse event
                 self.selected_option_index = index
                 self.answered = True
-                cli.set_return_value(None)
+                return_value = self.choices[self.selected_option_index][1]
+                cli.set_return_value(return_value)
 
             tokens.append((T.Pointer if selected else T, ' →  ' if selected
             else '   '))
