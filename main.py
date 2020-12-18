@@ -15,8 +15,9 @@ from validators import NumberValidator, RequiredValidator
 from menus.return_menu.return_menu import return_menu
 from utils.clear_terminal import clear_terminal
 from menus.create_dish_menu.create_dish_menu import create_dish_menu
-from menus.create_menu.create_menu_answers import create_menu
+from menus.create_menu.create_menu import create_menu
 from menus.create_category_menu.create_category_menu import create_category_menu
+from menus.quit_from_app.quit_from_app import quit_from_app
 
 
 def find_menu():
@@ -65,11 +66,6 @@ def view_category_menu():
     answer = prompt([{'type': 'list', 'name': 'view', 'message': '', 'choices': [
                     'Назад']}])
     back()
-
-
-def quit_from_app():
-    print('Чао бИбА with ❤️')
-    exit()
 
 
 def main_menu():
