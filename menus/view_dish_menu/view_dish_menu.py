@@ -19,6 +19,8 @@ def view_dish_menu(selected_category_id):
 
     answer = prompt(view_dish_questions)
     selected_dish = answer['dish']
+    if selected_dish == "Назад":
+        return back()
     selected_dish_id = dish_title_to_id[selected_dish]
 
     # TODO: Создать view_dish
