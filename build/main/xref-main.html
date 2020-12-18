@@ -18,16 +18,13 @@
   <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/main.py" type="text/plain"><tt>main.py</tt></a>
 <span class="moduletype">Script</span>  <div class="import">
 imports:
-    <a href="#PyInquirer">PyInquirer</a>
- &#8226;   <a href="#PyInquirer.prompt">PyInquirer.prompt</a>
- &#8226;   <a href="#_bootlocale">_bootlocale</a>
+    <a href="#_bootlocale">_bootlocale</a>
  &#8226;   <a href="#_collections_abc">_collections_abc</a>
  &#8226;   <a href="#_weakrefset">_weakrefset</a>
  &#8226;   <a href="#abc">abc</a>
  &#8226;   <a href="#codecs">codecs</a>
  &#8226;   <a href="#collections">collections</a>
  &#8226;   <a href="#collections.abc">collections.abc</a>
- &#8226;   <a href="#config">config</a>
  &#8226;   <a href="#copyreg">copyreg</a>
  &#8226;   <a href="#core.init_database">core.init_database</a>
  &#8226;   <a href="#encodings">encodings</a>
@@ -162,15 +159,12 @@ imports:
  &#8226;   <a href="#keyword">keyword</a>
  &#8226;   <a href="#linecache">linecache</a>
  &#8226;   <a href="#locale">locale</a>
+ &#8226;   <a href="#menus.init_menus">menus.init_menus</a>
  &#8226;   <a href="#operator">operator</a>
- &#8226;   <a href="#pprint">pprint</a>
  &#8226;   <a href="#pyi_rth_multiprocessing.py">pyi_rth_multiprocessing.py</a>
  &#8226;   <a href="#pyi_rth_pkgres.py">pyi_rth_pkgres.py</a>
  &#8226;   <a href="#re">re</a>
- &#8226;   <a href="#regex">regex</a>
  &#8226;   <a href="#reprlib">reprlib</a>
- &#8226;   <a href="#services.CategoryService">services.CategoryService</a>
- &#8226;   <a href="#services.DishService">services.DishService</a>
  &#8226;   <a href="#sre_compile">sre_compile</a>
  &#8226;   <a href="#sre_constants">sre_constants</a>
  &#8226;   <a href="#sre_parse">sre_parse</a>
@@ -323,8 +317,15 @@ imported by:
  &#8226;   <a href="#PyInquirer.prompts.rawlist">PyInquirer.prompts.rawlist</a>
  &#8226;   <a href="#PyInquirer.separator">PyInquirer.separator</a>
  &#8226;   <a href="#PyInquirer.utils">PyInquirer.utils</a>
- &#8226;   <a href="#config">config</a>
- &#8226;   <a href="#main.py">main.py</a>
+ &#8226;   <a href="#menus.create_category_menu.create_category_menu">menus.create_category_menu.create_category_menu</a>
+ &#8226;   <a href="#menus.create_dish_menu.create_dish_menu">menus.create_dish_menu.create_dish_menu</a>
+ &#8226;   <a href="#menus.create_menu.create_menu">menus.create_menu.create_menu</a>
+ &#8226;   <a href="#menus.main_menu.main_menu">menus.main_menu.main_menu</a>
+ &#8226;   <a href="#menus.return_menu.return_menu">menus.return_menu.return_menu</a>
+ &#8226;   <a href="#menus.view_category_menu.view_category_menu">menus.view_category_menu.view_category_menu</a>
+ &#8226;   <a href="#menus.view_dish_menu.view_dish_menu">menus.view_dish_menu.view_dish_menu</a>
+ &#8226;   <a href="#validators.NumberValidator">validators.NumberValidator</a>
+ &#8226;   <a href="#validators.RequiredValidator">validators.RequiredValidator</a>
 
   </div>
 
@@ -352,7 +353,13 @@ imports:
   <div class="import">
 imported by:
     <a href="#PyInquirer">PyInquirer</a>
- &#8226;   <a href="#main.py">main.py</a>
+ &#8226;   <a href="#menus.create_category_menu.create_category_menu">menus.create_category_menu.create_category_menu</a>
+ &#8226;   <a href="#menus.create_dish_menu.create_dish_menu">menus.create_dish_menu.create_dish_menu</a>
+ &#8226;   <a href="#menus.create_menu.create_menu">menus.create_menu.create_menu</a>
+ &#8226;   <a href="#menus.main_menu.main_menu">menus.main_menu.main_menu</a>
+ &#8226;   <a href="#menus.return_menu.return_menu">menus.return_menu.return_menu</a>
+ &#8226;   <a href="#menus.view_category_menu.view_category_menu">menus.view_category_menu.view_category_menu</a>
+ &#8226;   <a href="#menus.view_dish_menu.view_dish_menu">menus.view_dish_menu.view_dish_menu</a>
 
   </div>
 
@@ -3114,7 +3121,6 @@ imported by:
  &#8226;   <a href="#prompt_toolkit.styles.from_dict">prompt_toolkit.styles.from_dict</a>
  &#8226;   <a href="#pydoc">pydoc</a>
  &#8226;   <a href="#queue">queue</a>
- &#8226;   <a href="#regex._regex_core">regex._regex_core</a>
  &#8226;   <a href="#selectors">selectors</a>
  &#8226;   <a href="#shlex">shlex</a>
  &#8226;   <a href="#shutil">shutil</a>
@@ -3335,8 +3341,7 @@ imported by:
   <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/config.py" type="text/plain"><tt>config</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
-    <a href="#PyInquirer">PyInquirer</a>
- &#8226;   <a href="#models.Category">models.Category</a>
+    <a href="#models.Category">models.Category</a>
  &#8226;   <a href="#models.Dish">models.Dish</a>
  &#8226;   <a href="#models.Ingredients">models.Ingredients</a>
  &#8226;   <a href="#models.Todo">models.Todo</a>
@@ -3346,7 +3351,6 @@ imports:
   <div class="import">
 imported by:
     <a href="#core.init_database">core.init_database</a>
- &#8226;   <a href="#main.py">main.py</a>
 
   </div>
 
@@ -3445,7 +3449,6 @@ imported by:
  &#8226;   <a href="#multiprocessing.reduction">multiprocessing.reduction</a>
  &#8226;   <a href="#pickle">pickle</a>
  &#8226;   <a href="#re">re</a>
- &#8226;   <a href="#regex.regex">regex.regex</a>
 
   </div>
 
@@ -8278,7 +8281,6 @@ imported by:
  &#8226;   <a href="#gettext">gettext</a>
  &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#pygments.util">pygments.util</a>
- &#8226;   <a href="#regex.regex">regex.regex</a>
 
   </div>
 
@@ -8373,6 +8375,555 @@ imported by:
  &#8226;   <a href="#prompt_toolkit.layout.menus">prompt_toolkit.layout.menus</a>
  &#8226;   <a href="#random">random</a>
  &#8226;   <a href="#selectors">selectors</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="menus"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/menus/__init__.py" type="text/plain"><tt>menus</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imported by:
+    <a href="#menus.create_category_menu">menus.create_category_menu</a>
+ &#8226;   <a href="#menus.create_dish_menu">menus.create_dish_menu</a>
+ &#8226;   <a href="#menus.create_menu">menus.create_menu</a>
+ &#8226;   <a href="#menus.find_menu">menus.find_menu</a>
+ &#8226;   <a href="#menus.init_menus">menus.init_menus</a>
+ &#8226;   <a href="#menus.main_menu">menus.main_menu</a>
+ &#8226;   <a href="#menus.quit_from_app">menus.quit_from_app</a>
+ &#8226;   <a href="#menus.return_menu">menus.return_menu</a>
+ &#8226;   <a href="#menus.view_category_menu">menus.view_category_menu</a>
+ &#8226;   <a href="#menus.view_dish_menu">menus.view_dish_menu</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="menus.create_category_menu"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/menus/create_category_menu/__init__.py" type="text/plain"><tt>menus.create_category_menu</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#menus">menus</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.create_category_menu.create_category_menu">menus.create_category_menu.create_category_menu</a>
+ &#8226;   <a href="#menus.create_category_menu.create_category_questions">menus.create_category_menu.create_category_questions</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="menus.create_category_menu.create_category_menu"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/menus/create_category_menu/create_category_menu.py" type="text/plain"><tt>menus.create_category_menu.create_category_menu</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#PyInquirer">PyInquirer</a>
+ &#8226;   <a href="#PyInquirer.prompt">PyInquirer.prompt</a>
+ &#8226;   <a href="#menus.create_category_menu">menus.create_category_menu</a>
+ &#8226;   <a href="#menus.create_category_menu.create_category_questions">menus.create_category_menu.create_category_questions</a>
+ &#8226;   <a href="#services.CategoryService">services.CategoryService</a>
+ &#8226;   <a href="#utils.clear_terminal">utils.clear_terminal</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.create_menu.create_menu_answers">menus.create_menu.create_menu_answers</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="menus.create_category_menu.create_category_questions"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/menus/create_category_menu/create_category_questions.py" type="text/plain"><tt>menus.create_category_menu.create_category_questions</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#menus.create_category_menu">menus.create_category_menu</a>
+ &#8226;   <a href="#validators.RequiredValidator">validators.RequiredValidator</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.create_category_menu.create_category_menu">menus.create_category_menu.create_category_menu</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="menus.create_dish_menu"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/menus/create_dish_menu/__init__.py" type="text/plain"><tt>menus.create_dish_menu</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#menus">menus</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.create_dish_menu.create_dish_menu">menus.create_dish_menu.create_dish_menu</a>
+ &#8226;   <a href="#menus.create_dish_menu.create_dish_questions">menus.create_dish_menu.create_dish_questions</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="menus.create_dish_menu.create_dish_menu"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/menus/create_dish_menu/create_dish_menu.py" type="text/plain"><tt>menus.create_dish_menu.create_dish_menu</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#PyInquirer">PyInquirer</a>
+ &#8226;   <a href="#PyInquirer.prompt">PyInquirer.prompt</a>
+ &#8226;   <a href="#menus.create_dish_menu">menus.create_dish_menu</a>
+ &#8226;   <a href="#menus.create_dish_menu.create_dish_questions">menus.create_dish_menu.create_dish_questions</a>
+ &#8226;   <a href="#services.CategoryService">services.CategoryService</a>
+ &#8226;   <a href="#services.DishService">services.DishService</a>
+ &#8226;   <a href="#utils.clear_terminal">utils.clear_terminal</a>
+ &#8226;   <a href="#utils.get_elem_choices_and_title_to_id">utils.get_elem_choices_and_title_to_id</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.create_menu.create_menu_answers">menus.create_menu.create_menu_answers</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="menus.create_dish_menu.create_dish_questions"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/menus/create_dish_menu/create_dish_questions.py" type="text/plain"><tt>menus.create_dish_menu.create_dish_questions</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#menus.create_dish_menu">menus.create_dish_menu</a>
+ &#8226;   <a href="#validators.NumberValidator">validators.NumberValidator</a>
+ &#8226;   <a href="#validators.RequiredValidator">validators.RequiredValidator</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.create_dish_menu.create_dish_menu">menus.create_dish_menu.create_dish_menu</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="menus.create_menu"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/menus/create_menu/__init__.py" type="text/plain"><tt>menus.create_menu</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#menus">menus</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.create_menu.create_menu">menus.create_menu.create_menu</a>
+ &#8226;   <a href="#menus.create_menu.create_menu_answers">menus.create_menu.create_menu_answers</a>
+ &#8226;   <a href="#menus.create_menu.create_menu_questions">menus.create_menu.create_menu_questions</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="menus.create_menu.create_menu"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/menus/create_menu/create_menu.py" type="text/plain"><tt>menus.create_menu.create_menu</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#PyInquirer">PyInquirer</a>
+ &#8226;   <a href="#PyInquirer.prompt">PyInquirer.prompt</a>
+ &#8226;   <a href="#menus.create_menu">menus.create_menu</a>
+ &#8226;   <a href="#menus.create_menu.create_menu_answers">menus.create_menu.create_menu_answers</a>
+ &#8226;   <a href="#menus.create_menu.create_menu_questions">menus.create_menu.create_menu_questions</a>
+ &#8226;   <a href="#services.CategoryService">services.CategoryService</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.main_menu.main_menu_answers">menus.main_menu.main_menu_answers</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="menus.create_menu.create_menu_answers"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/menus/create_menu/create_menu_answers.py" type="text/plain"><tt>menus.create_menu.create_menu_answers</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#menus.create_category_menu.create_category_menu">menus.create_category_menu.create_category_menu</a>
+ &#8226;   <a href="#menus.create_dish_menu.create_dish_menu">menus.create_dish_menu.create_dish_menu</a>
+ &#8226;   <a href="#menus.create_menu">menus.create_menu</a>
+ &#8226;   <a href="#utils.back">utils.back</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.create_menu.create_menu">menus.create_menu.create_menu</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="menus.create_menu.create_menu_questions"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/menus/create_menu/create_menu_questions.py" type="text/plain"><tt>menus.create_menu.create_menu_questions</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#menus.create_menu">menus.create_menu</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.create_menu.create_menu">menus.create_menu.create_menu</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="menus.find_menu"></a>
+  <a target="code" href="-" type="text/plain"><tt>menus.find_menu</tt></a>
+<span class="moduletype">NamespacePackage</span>  <div class="import">
+imports:
+    <a href="#menus">menus</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.find_menu.find_menu">menus.find_menu.find_menu</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="menus.find_menu.find_menu"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/menus/find_menu/find_menu.py" type="text/plain"><tt>menus.find_menu.find_menu</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#menus.find_menu">menus.find_menu</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.main_menu.main_menu_answers">menus.main_menu.main_menu_answers</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="menus.init_menus"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/menus/init_menus.py" type="text/plain"><tt>menus.init_menus</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#menus">menus</a>
+ &#8226;   <a href="#menus.main_menu.main_menu">menus.main_menu.main_menu</a>
+ &#8226;   <a href="#utils.clear_terminal">utils.clear_terminal</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#main.py">main.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="menus.main_menu"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/menus/main_menu/__init__.py" type="text/plain"><tt>menus.main_menu</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#menus">menus</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.main_menu.main_menu">menus.main_menu.main_menu</a>
+ &#8226;   <a href="#menus.main_menu.main_menu_answers">menus.main_menu.main_menu_answers</a>
+ &#8226;   <a href="#menus.main_menu.main_menu_questions">menus.main_menu.main_menu_questions</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="menus.main_menu.main_menu"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/menus/main_menu/main_menu.py" type="text/plain"><tt>menus.main_menu.main_menu</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#PyInquirer">PyInquirer</a>
+ &#8226;   <a href="#PyInquirer.prompt">PyInquirer.prompt</a>
+ &#8226;   <a href="#menus.main_menu">menus.main_menu</a>
+ &#8226;   <a href="#menus.main_menu.main_menu_answers">menus.main_menu.main_menu_answers</a>
+ &#8226;   <a href="#menus.main_menu.main_menu_questions">menus.main_menu.main_menu_questions</a>
+ &#8226;   <a href="#utils.clear_terminal">utils.clear_terminal</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.init_menus">menus.init_menus</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="menus.main_menu.main_menu_answers"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/menus/main_menu/main_menu_answers.py" type="text/plain"><tt>menus.main_menu.main_menu_answers</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#menus.create_menu.create_menu">menus.create_menu.create_menu</a>
+ &#8226;   <a href="#menus.find_menu.find_menu">menus.find_menu.find_menu</a>
+ &#8226;   <a href="#menus.main_menu">menus.main_menu</a>
+ &#8226;   <a href="#menus.quit_from_app.quit_from_app">menus.quit_from_app.quit_from_app</a>
+ &#8226;   <a href="#menus.view_category_menu.view_category_menu">menus.view_category_menu.view_category_menu</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.main_menu.main_menu">menus.main_menu.main_menu</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="menus.main_menu.main_menu_questions"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/menus/main_menu/main_menu_questions.py" type="text/plain"><tt>menus.main_menu.main_menu_questions</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#menus.main_menu">menus.main_menu</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.main_menu.main_menu">menus.main_menu.main_menu</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="menus.quit_from_app"></a>
+  <a target="code" href="-" type="text/plain"><tt>menus.quit_from_app</tt></a>
+<span class="moduletype">NamespacePackage</span>  <div class="import">
+imports:
+    <a href="#menus">menus</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.quit_from_app.quit_from_app">menus.quit_from_app.quit_from_app</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="menus.quit_from_app.quit_from_app"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/menus/quit_from_app/quit_from_app.py" type="text/plain"><tt>menus.quit_from_app.quit_from_app</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#menus.quit_from_app">menus.quit_from_app</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.main_menu.main_menu_answers">menus.main_menu.main_menu_answers</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="menus.return_menu"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/menus/return_menu/__init__.py" type="text/plain"><tt>menus.return_menu</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#menus">menus</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.return_menu.return_answers">menus.return_menu.return_answers</a>
+ &#8226;   <a href="#menus.return_menu.return_menu">menus.return_menu.return_menu</a>
+ &#8226;   <a href="#menus.return_menu.return_questions">menus.return_menu.return_questions</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="menus.return_menu.return_answers"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/menus/return_menu/return_answers.py" type="text/plain"><tt>menus.return_menu.return_answers</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#menus.return_menu">menus.return_menu</a>
+ &#8226;   <a href="#utils.back">utils.back</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.return_menu.return_menu">menus.return_menu.return_menu</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="menus.return_menu.return_menu"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/menus/return_menu/return_menu.py" type="text/plain"><tt>menus.return_menu.return_menu</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#PyInquirer">PyInquirer</a>
+ &#8226;   <a href="#PyInquirer.prompt">PyInquirer.prompt</a>
+ &#8226;   <a href="#menus.return_menu">menus.return_menu</a>
+ &#8226;   <a href="#menus.return_menu.return_answers">menus.return_menu.return_answers</a>
+ &#8226;   <a href="#menus.return_menu.return_questions">menus.return_menu.return_questions</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.view_dish_menu.view_dish_menu">menus.view_dish_menu.view_dish_menu</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="menus.return_menu.return_questions"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/menus/return_menu/return_questions.py" type="text/plain"><tt>menus.return_menu.return_questions</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#menus.return_menu">menus.return_menu</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.return_menu.return_menu">menus.return_menu.return_menu</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="menus.view_category_menu"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/menus/view_category_menu/__init__.py" type="text/plain"><tt>menus.view_category_menu</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#menus">menus</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.view_category_menu.view_category_menu">menus.view_category_menu.view_category_menu</a>
+ &#8226;   <a href="#menus.view_category_menu.view_category_questions">menus.view_category_menu.view_category_questions</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="menus.view_category_menu.view_category_menu"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/menus/view_category_menu/view_category_menu.py" type="text/plain"><tt>menus.view_category_menu.view_category_menu</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#PyInquirer">PyInquirer</a>
+ &#8226;   <a href="#PyInquirer.prompt">PyInquirer.prompt</a>
+ &#8226;   <a href="#menus.view_category_menu">menus.view_category_menu</a>
+ &#8226;   <a href="#menus.view_category_menu.view_category_questions">menus.view_category_menu.view_category_questions</a>
+ &#8226;   <a href="#menus.view_dish_menu.view_dish_menu">menus.view_dish_menu.view_dish_menu</a>
+ &#8226;   <a href="#menus.view_dish_menu.view_dish_questions">menus.view_dish_menu.view_dish_questions</a>
+ &#8226;   <a href="#services.CategoryService">services.CategoryService</a>
+ &#8226;   <a href="#utils.get_elem_choices_and_title_to_id">utils.get_elem_choices_and_title_to_id</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.main_menu.main_menu_answers">menus.main_menu.main_menu_answers</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="menus.view_category_menu.view_category_questions"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/menus/view_category_menu/view_category_questions.py" type="text/plain"><tt>menus.view_category_menu.view_category_questions</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#menus.view_category_menu">menus.view_category_menu</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.view_category_menu.view_category_menu">menus.view_category_menu.view_category_menu</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="menus.view_dish_menu"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/menus/view_dish_menu/__init__.py" type="text/plain"><tt>menus.view_dish_menu</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#menus">menus</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.view_dish_menu.view_dish_menu">menus.view_dish_menu.view_dish_menu</a>
+ &#8226;   <a href="#menus.view_dish_menu.view_dish_questions">menus.view_dish_menu.view_dish_questions</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="menus.view_dish_menu.view_dish_menu"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/menus/view_dish_menu/view_dish_menu.py" type="text/plain"><tt>menus.view_dish_menu.view_dish_menu</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#PyInquirer">PyInquirer</a>
+ &#8226;   <a href="#PyInquirer.prompt">PyInquirer.prompt</a>
+ &#8226;   <a href="#menus.return_menu.return_menu">menus.return_menu.return_menu</a>
+ &#8226;   <a href="#menus.view_dish_menu">menus.view_dish_menu</a>
+ &#8226;   <a href="#menus.view_dish_menu.view_dish_questions">menus.view_dish_menu.view_dish_questions</a>
+ &#8226;   <a href="#pprint">pprint</a>
+ &#8226;   <a href="#services.DishService">services.DishService</a>
+ &#8226;   <a href="#utils.back">utils.back</a>
+ &#8226;   <a href="#utils.get_elem_choices_and_title_to_id">utils.get_elem_choices_and_title_to_id</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.view_category_menu.view_category_menu">menus.view_category_menu.view_category_menu</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="menus.view_dish_menu.view_dish_questions"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/menus/view_dish_menu/view_dish_questions.py" type="text/plain"><tt>menus.view_dish_menu.view_dish_questions</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#menus.view_dish_menu">menus.view_dish_menu</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.view_category_menu.view_category_menu">menus.view_category_menu.view_category_menu</a>
+ &#8226;   <a href="#menus.view_dish_menu.view_dish_menu">menus.view_dish_menu.view_dish_menu</a>
 
   </div>
 
@@ -9653,6 +10204,7 @@ imported by:
  &#8226;   <a href="#unittest.loader">unittest.loader</a>
  &#8226;   <a href="#unittest.main">unittest.main</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
+ &#8226;   <a href="#utils.clear_terminal">utils.clear_terminal</a>
  &#8226;   <a href="#utils.get_database_path">utils.get_database_path</a>
  &#8226;   <a href="#uu">uu</a>
  &#8226;   <a href="#uuid">uuid</a>
@@ -10419,7 +10971,7 @@ imported by:
  &#8226;   <a href="#PyInstaller.utils.misc">PyInstaller.utils.misc</a>
  &#8226;   <a href="#PyInstaller.utils.win32.versioninfo">PyInstaller.utils.win32.versioninfo</a>
  &#8226;   <a href="#lib2to3.pgen2.grammar">lib2to3.pgen2.grammar</a>
- &#8226;   <a href="#main.py">main.py</a>
+ &#8226;   <a href="#menus.view_dish_menu.view_dish_menu">menus.view_dish_menu.view_dish_menu</a>
  &#8226;   <a href="#pdb">pdb</a>
  &#8226;   <a href="#pickle">pickle</a>
  &#8226;   <a href="#pkg_resources._vendor.pyparsing">pkg_resources._vendor.pyparsing</a>
@@ -18497,7 +19049,6 @@ imported by:
  &#8226;   <a href="#email.generator">email.generator</a>
  &#8226;   <a href="#email.utils">email.utils</a>
  &#8226;   <a href="#prompt_toolkit.eventloop.posix">prompt_toolkit.eventloop.posix</a>
- &#8226;   <a href="#regex._regex_core">regex._regex_core</a>
  &#8226;   <a href="#tempfile">tempfile</a>
  &#8226;   <a href="#uuid">uuid</a>
 
@@ -18732,101 +19283,6 @@ imported by:
 </div>
 
 <div class="node">
-  <a name="regex"></a>
-  <a target="code" href="///C:/users/user/.virtualenvs/anncooks-jqoszxvv/lib/site-packages/regex/__init__.py" type="text/plain"><tt>regex</tt></a>
-<span class="moduletype">Package</span>  <div class="import">
-imports:
-    <a href="#regex">regex</a>
- &#8226;   <a href="#regex.DEFAULT_VERSION">regex.DEFAULT_VERSION</a>
- &#8226;   <a href="#regex.regex">regex.regex</a>
- &#8226;   <a href="#warnings">warnings</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#main.py">main.py</a>
- &#8226;   <a href="#regex">regex</a>
- &#8226;   <a href="#regex._regex">regex._regex</a>
- &#8226;   <a href="#regex._regex_core">regex._regex_core</a>
- &#8226;   <a href="#regex.regex">regex.regex</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="regex.DEFAULT_VERSION"></a>
-  <a target="code" href="" type="text/plain"><tt>regex.DEFAULT_VERSION</tt></a>
-<span class="moduletype">MissingModule</span>  <div class="import">
-imported by:
-    <a href="#regex">regex</a>
- &#8226;   <a href="#regex.regex">regex.regex</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="regex._regex"></a>
-  <tt>regex._regex</tt> <span class="moduletype"><tt>c:\users\user\.virtualenvs\anncooks-jqoszxvv\lib\site-packages\regex\_regex.cp37-win_amd64.pyd</tt></span>  <div class="import">
-imports:
-    <a href="#regex">regex</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#regex._regex_core">regex._regex_core</a>
- &#8226;   <a href="#regex.regex">regex.regex</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="regex._regex_core"></a>
-  <a target="code" href="///C:/users/user/.virtualenvs/anncooks-jqoszxvv/lib/site-packages/regex/_regex_core.py" type="text/plain"><tt>regex._regex_core</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#collections">collections</a>
- &#8226;   <a href="#random">random</a>
- &#8226;   <a href="#regex">regex</a>
- &#8226;   <a href="#regex._regex">regex._regex</a>
- &#8226;   <a href="#string">string</a>
- &#8226;   <a href="#sys">sys</a>
- &#8226;   <a href="#unicodedata">unicodedata</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#regex.regex">regex.regex</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="regex.regex"></a>
-  <a target="code" href="///C:/users/user/.virtualenvs/anncooks-jqoszxvv/lib/site-packages/regex/regex.py" type="text/plain"><tt>regex.regex</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#copyreg">copyreg</a>
- &#8226;   <a href="#locale">locale</a>
- &#8226;   <a href="#regex">regex</a>
- &#8226;   <a href="#regex.DEFAULT_VERSION">regex.DEFAULT_VERSION</a>
- &#8226;   <a href="#regex._regex">regex._regex</a>
- &#8226;   <a href="#regex._regex_core">regex._regex_core</a>
- &#8226;   <a href="#threading">threading</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#regex">regex</a>
-
-  </div>
-
-</div>
-
-<div class="node">
   <a name="reprlib"></a>
   <a target="code" href="///C:/Users/User/AppData/Local/Programs/Python/Python37/lib/reprlib.py" type="text/plain"><tt>reprlib</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
@@ -18950,7 +19406,10 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#main.py">main.py</a>
+    <a href="#menus.create_category_menu.create_category_menu">menus.create_category_menu.create_category_menu</a>
+ &#8226;   <a href="#menus.create_dish_menu.create_dish_menu">menus.create_dish_menu.create_dish_menu</a>
+ &#8226;   <a href="#menus.create_menu.create_menu">menus.create_menu.create_menu</a>
+ &#8226;   <a href="#menus.view_category_menu.view_category_menu">menus.view_category_menu.view_category_menu</a>
 
   </div>
 
@@ -18972,7 +19431,8 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#main.py">main.py</a>
+    <a href="#menus.create_dish_menu.create_dish_menu">menus.create_dish_menu.create_dish_menu</a>
+ &#8226;   <a href="#menus.view_dish_menu.view_dish_menu">menus.view_dish_menu.view_dish_menu</a>
 
   </div>
 
@@ -19480,7 +19940,6 @@ imported by:
  &#8226;   <a href="#prompt_toolkit.document">prompt_toolkit.document</a>
  &#8226;   <a href="#prompt_toolkit.key_binding.bindings.vi">prompt_toolkit.key_binding.bindings.vi</a>
  &#8226;   <a href="#pygments.lexers.fantom">pygments.lexers.fantom</a>
- &#8226;   <a href="#regex._regex_core">regex._regex_core</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
 
   </div>
@@ -19754,7 +20213,6 @@ imported by:
  &#8226;   <a href="#pygments.util">pygments.util</a>
  &#8226;   <a href="#pyi_rth_multiprocessing.py">pyi_rth_multiprocessing.py</a>
  &#8226;   <a href="#quopri">quopri</a>
- &#8226;   <a href="#regex._regex_core">regex._regex_core</a>
  &#8226;   <a href="#runpy">runpy</a>
  &#8226;   <a href="#selectors">selectors</a>
  &#8226;   <a href="#shlex">shlex</a>
@@ -19990,7 +20448,6 @@ imported by:
  &#8226;   <a href="#prompt_toolkit.utils">prompt_toolkit.utils</a>
  &#8226;   <a href="#pydoc">pydoc</a>
  &#8226;   <a href="#queue">queue</a>
- &#8226;   <a href="#regex.regex">regex.regex</a>
  &#8226;   <a href="#socketserver">socketserver</a>
  &#8226;   <a href="#subprocess">subprocess</a>
  &#8226;   <a href="#webbrowser">webbrowser</a>
@@ -20271,7 +20728,6 @@ imported by:
 imported by:
     <a href="#encodings.idna">encodings.idna</a>
  &#8226;   <a href="#pygments.unistring">pygments.unistring</a>
- &#8226;   <a href="#regex._regex_core">regex._regex_core</a>
  &#8226;   <a href="#stringprep">stringprep</a>
  &#8226;   <a href="#urllib.parse">urllib.parse</a>
 
@@ -20704,10 +21160,51 @@ imported by:
   <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/utils/__init__.py" type="text/plain"><tt>utils</tt></a>
 <span class="moduletype">Package</span>  <div class="import">
 imported by:
-    <a href="#utils.get_database_path">utils.get_database_path</a>
+    <a href="#utils.back">utils.back</a>
+ &#8226;   <a href="#utils.clear_terminal">utils.clear_terminal</a>
+ &#8226;   <a href="#utils.get_database_path">utils.get_database_path</a>
+ &#8226;   <a href="#utils.get_elem_choices_and_title_to_id">utils.get_elem_choices_and_title_to_id</a>
  &#8226;   <a href="#utils.get_model_field">utils.get_model_field</a>
  &#8226;   <a href="#utils.transform_query_to_array">utils.transform_query_to_array</a>
  &#8226;   <a href="#utils.transform_user_dict_to_valid_dict">utils.transform_user_dict_to_valid_dict</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="utils.back"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/utils/back.py" type="text/plain"><tt>utils.back</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#utils">utils</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.create_menu.create_menu_answers">menus.create_menu.create_menu_answers</a>
+ &#8226;   <a href="#menus.return_menu.return_answers">menus.return_menu.return_answers</a>
+ &#8226;   <a href="#menus.view_dish_menu.view_dish_menu">menus.view_dish_menu.view_dish_menu</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="utils.clear_terminal"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/utils/clear_terminal.py" type="text/plain"><tt>utils.clear_terminal</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#os">os</a>
+ &#8226;   <a href="#utils">utils</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.create_category_menu.create_category_menu">menus.create_category_menu.create_category_menu</a>
+ &#8226;   <a href="#menus.create_dish_menu.create_dish_menu">menus.create_dish_menu.create_dish_menu</a>
+ &#8226;   <a href="#menus.init_menus">menus.init_menus</a>
+ &#8226;   <a href="#menus.main_menu.main_menu">menus.main_menu.main_menu</a>
 
   </div>
 
@@ -20727,6 +21224,24 @@ imports:
   <div class="import">
 imported by:
     <a href="#config">config</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="utils.get_elem_choices_and_title_to_id"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/utils/get_elem_choices_and_title_to_id.py" type="text/plain"><tt>utils.get_elem_choices_and_title_to_id</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#utils">utils</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.create_dish_menu.create_dish_menu">menus.create_dish_menu.create_dish_menu</a>
+ &#8226;   <a href="#menus.view_category_menu.view_category_menu">menus.view_category_menu.view_category_menu</a>
+ &#8226;   <a href="#menus.view_dish_menu.view_dish_menu">menus.view_dish_menu.view_dish_menu</a>
 
   </div>
 
@@ -20836,6 +21351,53 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="validators"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/validators/__init__.py" type="text/plain"><tt>validators</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imported by:
+    <a href="#validators.NumberValidator">validators.NumberValidator</a>
+ &#8226;   <a href="#validators.RequiredValidator">validators.RequiredValidator</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="validators.NumberValidator"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/validators/NumberValidator.py" type="text/plain"><tt>validators.NumberValidator</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#PyInquirer">PyInquirer</a>
+ &#8226;   <a href="#validators">validators</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.create_dish_menu.create_dish_questions">menus.create_dish_menu.create_dish_questions</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="validators.RequiredValidator"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/validators/RequiredValidator.py" type="text/plain"><tt>validators.RequiredValidator</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#PyInquirer">PyInquirer</a>
+ &#8226;   <a href="#validators">validators</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.create_category_menu.create_category_questions">menus.create_category_menu.create_category_questions</a>
+ &#8226;   <a href="#menus.create_dish_menu.create_dish_questions">menus.create_dish_menu.create_dish_questions</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="vms_lib"></a>
   <a target="code" href="" type="text/plain"><tt>vms_lib</tt></a>
 <span class="moduletype">MissingModule</span>  <div class="import">
@@ -20906,7 +21468,6 @@ imported by:
  &#8226;   <a href="#plistlib">plistlib</a>
  &#8226;   <a href="#pydoc">pydoc</a>
  &#8226;   <a href="#random">random</a>
- &#8226;   <a href="#regex">regex</a>
  &#8226;   <a href="#runpy">runpy</a>
  &#8226;   <a href="#sre_parse">sre_parse</a>
  &#8226;   <a href="#ssl">ssl</a>
