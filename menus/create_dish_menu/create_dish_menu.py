@@ -18,7 +18,6 @@ def create_dish_menu():
 
     selected_category = answer['category']
     selected_category_id = category_title_to_id[selected_category]
-    pprint(answer)
     data = {
         "title": answer['title'],
         "recipe": answer['recipe'],
