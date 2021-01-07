@@ -9,7 +9,7 @@ from utils.clear_terminal import clear_terminal
 from .view_dish_answers import VIEW_DISH_ANSWERS
 
 
-def view_dish_menu(selected_category_ia=None, dishes=None):
+def view_dish_menu(selected_category_id=None, dishes=None):
     if dishes is None:
         dishes = get_dish_by_category_id(selected_category_id)
     if not len(dishes):
