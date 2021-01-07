@@ -4,6 +4,7 @@ from .create_dish_questions import get_create_dish_questions
 from services.CategoryService import get_all_category
 from utils.clear_terminal import clear_terminal
 from PyInquirer import prompt
+from pprint import pprint
 
 def create_dish_menu():
     categories = get_all_category()
@@ -17,7 +18,7 @@ def create_dish_menu():
 
     selected_category = answer['category']
     selected_category_id = category_title_to_id[selected_category]
-
+    pprint(answer)
     data = {
         "title": answer['title'],
         "recipe": answer['recipe'],

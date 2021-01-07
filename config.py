@@ -1,4 +1,3 @@
-from models.Todo import Todo
 from models.Category import Category
 from models.Dish import Dish
 from models.Ingredients import Ingredients
@@ -8,7 +7,6 @@ DATABASE = 'my.db'
 APP_NAME = 'todoapp'
 
 MODELS = (
-    Todo,
     Category,
     Dish,
     Ingredients

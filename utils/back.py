@@ -1,2 +1,2 @@
-def back():
+def back(*args):
     return

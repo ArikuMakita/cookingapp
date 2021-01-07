@@ -9,13 +9,6 @@ from utils.transform_query_to_array import transform_query_to_array
 def find_dish(data):
     """
     data = {field, search}
-
-    algo:
-    1) field == 'category' ? yes => (2) : no => (4)
-    2) category = Category.get(Category.title==search)
-    3) search = category.id
-    4) query_dish = Dish.select().where(get_model_field(field) == search)
-    5) return _transform_query_to_array(query_dish)
     """
     field = data['field']
     search = data['search']
@@ -24,7 +17,7 @@ def find_dish(data):
         category = Category.get(Category.title == search)
         search = category.id
     query_dish = Dish.select().where(get_model_field(Dish, field) == search)
-    return _transform_query_to_array(query_dish)
+    return transform_query_to_array(query_dish)
 
 
 def create_dish(data):
