@@ -7,9 +7,6 @@ from utils.transform_query_to_array import transform_query_to_array
 
 
 def find_dish(data):
-    """
-    data = {field, search}
-    """
     field = data['field']
     search = data['search']
 
@@ -21,19 +18,6 @@ def find_dish(data):
 
 
 def create_dish(data):
-    """
-    data = {
-        title: str,
-        recipe: str,
-        time: int,
-        calories: int,
-        category: int,
-        ingredients: {
-            amount: int,
-            components: str
-        }
-    }
-    """
     ingredients = Ingredients.create(
         amount=data['ingredients']['amount'],
         components=data['ingredients']['components'])
@@ -85,5 +69,3 @@ def delete_dish_by_id(id):
     dish = get_dish_by_id(id)
     Ingredients.get_by_id(dish.ingredients).delete_instance()
     dish.delete_instance()
-
-

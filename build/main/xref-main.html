@@ -320,10 +320,13 @@ imported by:
  &#8226;   <a href="#menus.create_category_menu.create_category_menu">menus.create_category_menu.create_category_menu</a>
  &#8226;   <a href="#menus.create_dish_menu.create_dish_menu">menus.create_dish_menu.create_dish_menu</a>
  &#8226;   <a href="#menus.create_menu.create_menu">menus.create_menu.create_menu</a>
+ &#8226;   <a href="#menus.find_menu.find_menu">menus.find_menu.find_menu</a>
  &#8226;   <a href="#menus.main_menu.main_menu">menus.main_menu.main_menu</a>
  &#8226;   <a href="#menus.return_menu.return_menu">menus.return_menu.return_menu</a>
  &#8226;   <a href="#menus.view_category_menu.view_category_menu">menus.view_category_menu.view_category_menu</a>
+ &#8226;   <a href="#menus.view_dish_menu.view_dish_answers">menus.view_dish_menu.view_dish_answers</a>
  &#8226;   <a href="#menus.view_dish_menu.view_dish_menu">menus.view_dish_menu.view_dish_menu</a>
+ &#8226;   <a href="#utils.confirnamion">utils.confirnamion</a>
  &#8226;   <a href="#validators.NumberValidator">validators.NumberValidator</a>
  &#8226;   <a href="#validators.RequiredValidator">validators.RequiredValidator</a>
 
@@ -356,10 +359,13 @@ imported by:
  &#8226;   <a href="#menus.create_category_menu.create_category_menu">menus.create_category_menu.create_category_menu</a>
  &#8226;   <a href="#menus.create_dish_menu.create_dish_menu">menus.create_dish_menu.create_dish_menu</a>
  &#8226;   <a href="#menus.create_menu.create_menu">menus.create_menu.create_menu</a>
+ &#8226;   <a href="#menus.find_menu.find_menu">menus.find_menu.find_menu</a>
  &#8226;   <a href="#menus.main_menu.main_menu">menus.main_menu.main_menu</a>
  &#8226;   <a href="#menus.return_menu.return_menu">menus.return_menu.return_menu</a>
  &#8226;   <a href="#menus.view_category_menu.view_category_menu">menus.view_category_menu.view_category_menu</a>
+ &#8226;   <a href="#menus.view_dish_menu.view_dish_answers">menus.view_dish_menu.view_dish_answers</a>
  &#8226;   <a href="#menus.view_dish_menu.view_dish_menu">menus.view_dish_menu.view_dish_menu</a>
+ &#8226;   <a href="#utils.confirnamion">utils.confirnamion</a>
 
   </div>
 
@@ -3344,7 +3350,6 @@ imports:
     <a href="#models.Category">models.Category</a>
  &#8226;   <a href="#models.Dish">models.Dish</a>
  &#8226;   <a href="#models.Ingredients">models.Ingredients</a>
- &#8226;   <a href="#models.Todo">models.Todo</a>
  &#8226;   <a href="#utils.get_database_path">utils.get_database_path</a>
 
   </div>
@@ -3480,7 +3485,6 @@ imported by:
     <a href="#models.Category">models.Category</a>
  &#8226;   <a href="#models.Dish">models.Dish</a>
  &#8226;   <a href="#models.Ingredients">models.Ingredients</a>
- &#8226;   <a href="#models.Todo">models.Todo</a>
 
   </div>
 
@@ -8481,6 +8485,7 @@ imports:
  &#8226;   <a href="#PyInquirer.prompt">PyInquirer.prompt</a>
  &#8226;   <a href="#menus.create_dish_menu">menus.create_dish_menu</a>
  &#8226;   <a href="#menus.create_dish_menu.create_dish_questions">menus.create_dish_menu.create_dish_questions</a>
+ &#8226;   <a href="#pprint">pprint</a>
  &#8226;   <a href="#services.CategoryService">services.CategoryService</a>
  &#8226;   <a href="#services.DishService">services.DishService</a>
  &#8226;   <a href="#utils.clear_terminal">utils.clear_terminal</a>
@@ -8508,6 +8513,7 @@ imports:
   <div class="import">
 imported by:
     <a href="#menus.create_dish_menu.create_dish_menu">menus.create_dish_menu.create_dish_menu</a>
+ &#8226;   <a href="#menus.view_dish_menu.view_dish_answers">menus.view_dish_menu.view_dish_answers</a>
 
   </div>
 
@@ -8608,7 +8614,15 @@ imported by:
   <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/menus/find_menu/find_menu.py" type="text/plain"><tt>menus.find_menu.find_menu</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
-    <a href="#menus.find_menu">menus.find_menu</a>
+    <a href="#PyInquirer">PyInquirer</a>
+ &#8226;   <a href="#PyInquirer.prompt">PyInquirer.prompt</a>
+ &#8226;   <a href="#menus.find_menu">menus.find_menu</a>
+ &#8226;   <a href="#menus.return_menu.return_menu">menus.return_menu.return_menu</a>
+ &#8226;   <a href="#menus.view_dish_menu.view_dish_menu">menus.view_dish_menu.view_dish_menu</a>
+ &#8226;   <a href="#services.DishService">services.DishService</a>
+ &#8226;   <a href="#utils.back">utils.back</a>
+ &#8226;   <a href="#validators.NumberValidator">validators.NumberValidator</a>
+ &#8226;   <a href="#validators.RequiredValidator">validators.RequiredValidator</a>
 
   </div>
   <div class="import">
@@ -8793,7 +8807,9 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#menus.view_dish_menu.view_dish_menu">menus.view_dish_menu.view_dish_menu</a>
+    <a href="#menus.find_menu.find_menu">menus.find_menu.find_menu</a>
+ &#8226;   <a href="#menus.view_category_menu.view_category_menu">menus.view_category_menu.view_category_menu</a>
+ &#8226;   <a href="#menus.view_dish_menu.view_dish_menu">menus.view_dish_menu.view_dish_menu</a>
 
   </div>
 
@@ -8839,11 +8855,14 @@ imported by:
 imports:
     <a href="#PyInquirer">PyInquirer</a>
  &#8226;   <a href="#PyInquirer.prompt">PyInquirer.prompt</a>
+ &#8226;   <a href="#menus.return_menu.return_menu">menus.return_menu.return_menu</a>
  &#8226;   <a href="#menus.view_category_menu">menus.view_category_menu</a>
  &#8226;   <a href="#menus.view_category_menu.view_category_questions">menus.view_category_menu.view_category_questions</a>
  &#8226;   <a href="#menus.view_dish_menu.view_dish_menu">menus.view_dish_menu.view_dish_menu</a>
  &#8226;   <a href="#menus.view_dish_menu.view_dish_questions">menus.view_dish_menu.view_dish_questions</a>
  &#8226;   <a href="#services.CategoryService">services.CategoryService</a>
+ &#8226;   <a href="#utils.back">utils.back</a>
+ &#8226;   <a href="#utils.confirnamion">utils.confirnamion</a>
  &#8226;   <a href="#utils.get_elem_choices_and_title_to_id">utils.get_elem_choices_and_title_to_id</a>
 
   </div>
@@ -8881,8 +8900,33 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#menus.view_dish_menu.view_dish_menu">menus.view_dish_menu.view_dish_menu</a>
+    <a href="#menus.view_dish_menu.view_dish_answers">menus.view_dish_menu.view_dish_answers</a>
+ &#8226;   <a href="#menus.view_dish_menu.view_dish_menu">menus.view_dish_menu.view_dish_menu</a>
  &#8226;   <a href="#menus.view_dish_menu.view_dish_questions">menus.view_dish_menu.view_dish_questions</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="menus.view_dish_menu.view_dish_answers"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/menus/view_dish_menu/view_dish_answers.py" type="text/plain"><tt>menus.view_dish_menu.view_dish_answers</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#PyInquirer">PyInquirer</a>
+ &#8226;   <a href="#PyInquirer.prompt">PyInquirer.prompt</a>
+ &#8226;   <a href="#menus.create_dish_menu.create_dish_questions">menus.create_dish_menu.create_dish_questions</a>
+ &#8226;   <a href="#menus.view_dish_menu">menus.view_dish_menu</a>
+ &#8226;   <a href="#pprint">pprint</a>
+ &#8226;   <a href="#services.DishService">services.DishService</a>
+ &#8226;   <a href="#utils.back">utils.back</a>
+ &#8226;   <a href="#utils.clear_terminal">utils.clear_terminal</a>
+ &#8226;   <a href="#utils.confirnamion">utils.confirnamion</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.view_dish_menu.view_dish_menu">menus.view_dish_menu.view_dish_menu</a>
 
   </div>
 
@@ -8897,16 +8941,19 @@ imports:
  &#8226;   <a href="#PyInquirer.prompt">PyInquirer.prompt</a>
  &#8226;   <a href="#menus.return_menu.return_menu">menus.return_menu.return_menu</a>
  &#8226;   <a href="#menus.view_dish_menu">menus.view_dish_menu</a>
+ &#8226;   <a href="#menus.view_dish_menu.view_dish_answers">menus.view_dish_menu.view_dish_answers</a>
  &#8226;   <a href="#menus.view_dish_menu.view_dish_questions">menus.view_dish_menu.view_dish_questions</a>
  &#8226;   <a href="#pprint">pprint</a>
  &#8226;   <a href="#services.DishService">services.DishService</a>
  &#8226;   <a href="#utils.back">utils.back</a>
+ &#8226;   <a href="#utils.clear_terminal">utils.clear_terminal</a>
  &#8226;   <a href="#utils.get_elem_choices_and_title_to_id">utils.get_elem_choices_and_title_to_id</a>
 
   </div>
   <div class="import">
 imported by:
-    <a href="#menus.view_category_menu.view_category_menu">menus.view_category_menu.view_category_menu</a>
+    <a href="#menus.find_menu.find_menu">menus.find_menu.find_menu</a>
+ &#8226;   <a href="#menus.view_category_menu.view_category_menu">menus.view_category_menu.view_category_menu</a>
 
   </div>
 
@@ -8970,7 +9017,6 @@ imported by:
     <a href="#models.Category">models.Category</a>
  &#8226;   <a href="#models.Dish">models.Dish</a>
  &#8226;   <a href="#models.Ingredients">models.Ingredients</a>
- &#8226;   <a href="#models.Todo">models.Todo</a>
 
   </div>
 
@@ -9033,24 +9079,6 @@ imported by:
     <a href="#config">config</a>
  &#8226;   <a href="#models.Dish">models.Dish</a>
  &#8226;   <a href="#services.DishService">services.DishService</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="models.Todo"></a>
-  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/models/Todo.py" type="text/plain"><tt>models.Todo</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#core.BaseModel">core.BaseModel</a>
- &#8226;   <a href="#models">models</a>
- &#8226;   <a href="#peewee">peewee</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#config">config</a>
 
   </div>
 
@@ -10301,7 +10329,6 @@ imported by:
  &#8226;   <a href="#models.Category">models.Category</a>
  &#8226;   <a href="#models.Dish">models.Dish</a>
  &#8226;   <a href="#models.Ingredients">models.Ingredients</a>
- &#8226;   <a href="#models.Todo">models.Todo</a>
 
   </div>
 
@@ -10971,6 +10998,8 @@ imported by:
  &#8226;   <a href="#PyInstaller.utils.misc">PyInstaller.utils.misc</a>
  &#8226;   <a href="#PyInstaller.utils.win32.versioninfo">PyInstaller.utils.win32.versioninfo</a>
  &#8226;   <a href="#lib2to3.pgen2.grammar">lib2to3.pgen2.grammar</a>
+ &#8226;   <a href="#menus.create_dish_menu.create_dish_menu">menus.create_dish_menu.create_dish_menu</a>
+ &#8226;   <a href="#menus.view_dish_menu.view_dish_answers">menus.view_dish_menu.view_dish_answers</a>
  &#8226;   <a href="#menus.view_dish_menu.view_dish_menu">menus.view_dish_menu.view_dish_menu</a>
  &#8226;   <a href="#pdb">pdb</a>
  &#8226;   <a href="#pickle">pickle</a>
@@ -14166,7 +14195,6 @@ imports:
  &#8226;   <a href="#pygments.lexers._mql_builtins">pygments.lexers._mql_builtins</a>
  &#8226;   <a href="#pygments.lexers._scilab_builtins">pygments.lexers._scilab_builtins</a>
  &#8226;   <a href="#pygments.lexers._stan_builtins">pygments.lexers._stan_builtins</a>
- &#8226;   <a href="#pygments.lexers._tsql_builtins">pygments.lexers._tsql_builtins</a>
  &#8226;   <a href="#pygments.lexers._vbscript_builtins">pygments.lexers._vbscript_builtins</a>
  &#8226;   <a href="#pygments.modeline">pygments.modeline</a>
  &#8226;   <a href="#pygments.plugin">pygments.plugin</a>
@@ -14679,7 +14707,6 @@ imports:
   <div class="import">
 imported by:
     <a href="#pygments">pygments</a>
- &#8226;   <a href="#pygments.lexers">pygments.lexers</a>
  &#8226;   <a href="#pygments.lexers.sql">pygments.lexers.sql</a>
 
   </div>
@@ -19432,6 +19459,8 @@ imports:
   <div class="import">
 imported by:
     <a href="#menus.create_dish_menu.create_dish_menu">menus.create_dish_menu.create_dish_menu</a>
+ &#8226;   <a href="#menus.find_menu.find_menu">menus.find_menu.find_menu</a>
+ &#8226;   <a href="#menus.view_dish_menu.view_dish_answers">menus.view_dish_menu.view_dish_answers</a>
  &#8226;   <a href="#menus.view_dish_menu.view_dish_menu">menus.view_dish_menu.view_dish_menu</a>
 
   </div>
@@ -21162,6 +21191,7 @@ imported by:
 imported by:
     <a href="#utils.back">utils.back</a>
  &#8226;   <a href="#utils.clear_terminal">utils.clear_terminal</a>
+ &#8226;   <a href="#utils.confirnamion">utils.confirnamion</a>
  &#8226;   <a href="#utils.get_database_path">utils.get_database_path</a>
  &#8226;   <a href="#utils.get_elem_choices_and_title_to_id">utils.get_elem_choices_and_title_to_id</a>
  &#8226;   <a href="#utils.get_model_field">utils.get_model_field</a>
@@ -21183,7 +21213,10 @@ imports:
   <div class="import">
 imported by:
     <a href="#menus.create_menu.create_menu_answers">menus.create_menu.create_menu_answers</a>
+ &#8226;   <a href="#menus.find_menu.find_menu">menus.find_menu.find_menu</a>
  &#8226;   <a href="#menus.return_menu.return_answers">menus.return_menu.return_answers</a>
+ &#8226;   <a href="#menus.view_category_menu.view_category_menu">menus.view_category_menu.view_category_menu</a>
+ &#8226;   <a href="#menus.view_dish_menu.view_dish_answers">menus.view_dish_menu.view_dish_answers</a>
  &#8226;   <a href="#menus.view_dish_menu.view_dish_menu">menus.view_dish_menu.view_dish_menu</a>
 
   </div>
@@ -21205,6 +21238,27 @@ imported by:
  &#8226;   <a href="#menus.create_dish_menu.create_dish_menu">menus.create_dish_menu.create_dish_menu</a>
  &#8226;   <a href="#menus.init_menus">menus.init_menus</a>
  &#8226;   <a href="#menus.main_menu.main_menu">menus.main_menu.main_menu</a>
+ &#8226;   <a href="#menus.view_dish_menu.view_dish_answers">menus.view_dish_menu.view_dish_answers</a>
+ &#8226;   <a href="#menus.view_dish_menu.view_dish_menu">menus.view_dish_menu.view_dish_menu</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="utils.confirnamion"></a>
+  <a target="code" href="///C:/Users/User/Desktop/%D0%BA%D0%BE%D0%BB%D0%BB%D0%95%D0%B4%D0%B6/%D0%BF%D1%8B%D1%82%D0%BE%D0%BD/AnnCooks/utils/confirnamion.py" type="text/plain"><tt>utils.confirnamion</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#PyInquirer">PyInquirer</a>
+ &#8226;   <a href="#PyInquirer.prompt">PyInquirer.prompt</a>
+ &#8226;   <a href="#utils">utils</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#menus.view_category_menu.view_category_menu">menus.view_category_menu.view_category_menu</a>
+ &#8226;   <a href="#menus.view_dish_menu.view_dish_answers">menus.view_dish_menu.view_dish_answers</a>
 
   </div>
 
@@ -21374,6 +21428,7 @@ imports:
   <div class="import">
 imported by:
     <a href="#menus.create_dish_menu.create_dish_questions">menus.create_dish_menu.create_dish_questions</a>
+ &#8226;   <a href="#menus.find_menu.find_menu">menus.find_menu.find_menu</a>
 
   </div>
 
@@ -21392,6 +21447,7 @@ imports:
 imported by:
     <a href="#menus.create_category_menu.create_category_questions">menus.create_category_menu.create_category_questions</a>
  &#8226;   <a href="#menus.create_dish_menu.create_dish_questions">menus.create_dish_menu.create_dish_questions</a>
+ &#8226;   <a href="#menus.find_menu.find_menu">menus.find_menu.find_menu</a>
 
   </div>
 
